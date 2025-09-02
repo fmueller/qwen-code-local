@@ -18,4 +18,4 @@ USER qwen
 WORKDIR /home/qwen
 
 ENTRYPOINT ["/home/qwen/entrypoint.sh"]
-CMD ["bash"]
+CMD ["qwen"]
