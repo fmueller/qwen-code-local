@@ -18,6 +18,8 @@ The goal is to provide a local-first, asynchronous version of Qwen Code that cre
 
 ## How to use
 
+### Basic usage
+
 ```bash
 docker build -t qwen-code-local .
 docker run -it --rm \
@@ -28,6 +30,48 @@ docker run -it --rm \
 ```
 
 Note: On macOS, `localhost` is not accessible, use `host.docker.internal` instead.
+
+### Cloning a repository into the container
+
+```bash
+docker build -t qwen-code-local .
+docker run -it --rm \
+  -e OPENAI_BASE_URL=http://localhost:11434/v1 \
+  -e OPENAI_API_KEY=no-key \
+  -e OPENAI_MODEL=qwen3:1.7b \
+  -e REPO_URL=github.com/username/repository.git \
+  qwen-code-local
+```
+
+The repository will be cloned to `/home/qwen/repo` inside the container.
+
+For private repositories, include your GitHub Personal Access Token:
+
+```bash
+docker build -t qwen-code-local .
+docker run -it --rm \
+  -e OPENAI_BASE_URL=http://localhost:11434/v1 \
+  -e OPENAI_API_KEY=no-key \
+  -e OPENAI_MODEL=qwen3:1.7b \
+  -e REPO_URL=github.com/username/private-repo.git \
+  -e GITHUB_PAT=your_github_token \
+  qwen-code-local
+```
+
+### Cloning big repositories with shallow clones
+
+For faster cloning of large repositories, use shallow clone:
+
+```bash
+docker build -t qwen-code-local .
+docker run -it --rm \
+  -e OPENAI_BASE_URL=http://localhost:11434/v1 \
+  -e OPENAI_API_KEY=no-key \
+  -e OPENAI_MODEL=qwen3:1.7b \
+  -e REPO_URL=github.com/username/repository.git \
+  -e CLONE_SHALLOW=1 \
+  qwen-code-local
+```
 
 ## Next steps
 
