@@ -16,6 +16,12 @@ The goal is to provide a local-first, asynchronous version of Qwen Code that cre
 - Tracking disabled
 - Optionally clones a provided repository
 
+## Next steps
+
+- Add support for local OpenTelemetry tracking
+- Add support for MCPs
+- Add support for creating PRs after a successful run
+
 ## How to use
 
 ### Basic usage
@@ -72,12 +78,6 @@ docker run -it --rm \
   -e CLONE_SHALLOW=1 \
   qwen-code-local
 ```
-
-## Next steps
-
-- Add support for local OpenTelemetry tracking
-- Add support for MCPs
-- Add support for creating PRs after a successful run
 
 ## License
 
