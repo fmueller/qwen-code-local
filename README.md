@@ -2,7 +2,7 @@
 
 [![Qwen Code Local](https://github.com/fmueller/qwen-code-local/actions/workflows/qwen-code-local.yaml/badge.svg)](https://github.com/fmueller/qwen-code-local/actions/workflows/qwen-code-local.yaml)
 
-A local-only version of Qwen Code
+A local-first version of Qwen Code
 
 This repository contains configurations and scripts for running Qwen Code locally in a Docker container. It uses
 a local-compatible OpenAI API (Ollama). Also, tracking is disabled.
