@@ -1,0 +1,8 @@
+{
+  "telemetry": {
+    "enabled": false
+  },
+  "enableOpenAILogging": false,
+  "usageStatisticsEnabled": false,
+  "selectedAuthType": "openai"
+}
