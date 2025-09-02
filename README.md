@@ -1,4 +1,4 @@
-# qwen-code-local
+# QWEN Code Local
 
 [![Qwen Code Local](https://github.com/fmueller/qwen-code-local/actions/workflows/qwen-code-local.yaml/badge.svg)](https://github.com/fmueller/qwen-code-local/actions/workflows/qwen-code-local.yaml)
 
