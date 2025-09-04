@@ -24,10 +24,15 @@ The goal is to provide a local-first, asynchronous version of Qwen Code that cre
 
 ## How to use
 
-### Basic usage
+### Build the image
 
 ```bash
 docker build -t qwen-code-local .
+```
+
+### Basic usage
+
+```bash
 docker run -it --rm \
   -e OPENAI_BASE_URL=http://localhost:11434/v1 \
   -e OPENAI_API_KEY=no-key \
@@ -40,7 +45,6 @@ Note: On macOS, `localhost` is not accessible, use `host.docker.internal` instea
 ### Cloning a repository into the container
 
 ```bash
-docker build -t qwen-code-local .
 docker run -it --rm \
   -e OPENAI_BASE_URL=http://localhost:11434/v1 \
   -e OPENAI_API_KEY=no-key \
@@ -54,7 +58,6 @@ The repository will be cloned to `/home/qwen/repo` inside the container.
 For private repositories, include your GitHub Personal Access Token:
 
 ```bash
-docker build -t qwen-code-local .
 docker run -it --rm \
   -e OPENAI_BASE_URL=http://localhost:11434/v1 \
   -e OPENAI_API_KEY=no-key \
@@ -69,7 +72,6 @@ docker run -it --rm \
 For faster cloning of large repositories, use shallow clone:
 
 ```bash
-docker build -t qwen-code-local .
 docker run -it --rm \
   -e OPENAI_BASE_URL=http://localhost:11434/v1 \
   -e OPENAI_API_KEY=no-key \
